@@ -1,0 +1,94 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+#wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #ddd;
+}
+
+#page-content-wrapper {
+    flex: 1;
+    padding: 20px;
+}
+
+#menu-toggle {
+    margin: 10px;
+}
+
+/* Profile Drawer */
+#profile-drawer {
+    margin-top: 10px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+#avatar {
+    cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar-heading {
+    padding: 10px;
+    background: #e9ecef;
+    border-bottom: 1px solid #ddd;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.list-group-item-action:hover {
+    background-color: #ddd;
+}
+
+/* Card Styles */
+.card {
+    margin-top: 20px;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.card-body {
+    background-color: #fff;
+}
+
+/* Button Styles */
+.btn-block {
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    #page-content-wrapper {
+        padding: 10px;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -250px;
+    }
+}
