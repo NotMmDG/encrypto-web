@@ -243,3 +243,18 @@ def huffman_decompress(blob: bytes) -> bytes:
             node = root
 
     return bytes(out)
+
+def encrypt_file_with_huffman(data: bytes, password: str) -> bytes:
+    """
+    Compress with Huffman, then encrypt with AES-CFB (same KDF/IV scheme as encrypt_file).
+    """
+    compressed = huffman_compress(data)
+    return encrypt_file(compressed, password)
+
+
+def decrypt_file_with_huffman(blob: bytes, password: str) -> bytes:
+    """
+    Decrypt with AES-CFB, then Huffman-decompress.
+    """
+    decrypted = decrypt_file(blob, password)
+    return huffman_decompress(decrypted)
